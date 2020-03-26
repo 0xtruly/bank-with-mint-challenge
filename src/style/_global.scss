@@ -80,7 +80,7 @@ section[role='graph'] {
 				@include analytics-bg();
 
 				canvas {
-					height: 365px !important;
+					height: 417px !important;
 				}
 			}
 
@@ -97,7 +97,7 @@ section[role='graph'] {
 
 				.transaction-card {
 					div.progress-line {
-						height: .3rem;
+						height: 0.3rem;
 						background-color: $yellow;
 						border-radius: 3.125rem;
 						margin-top: 1em;
@@ -107,7 +107,7 @@ section[role='graph'] {
 							border-top-left-radius: 3.125rem;
 							border-bottom-left-radius: 3.125rem;
 							width: 80%;
-							height: .3rem;
+							height: 0.3rem;
 						}
 					}
 
@@ -144,7 +144,7 @@ section[role='graph'] {
 	}
 }
 
-section[role*="table"] {
+section[role*='table'] {
 	span.footer {
 		position: relative;
 		top: -31px;
@@ -162,7 +162,7 @@ section[role*="table"] {
 
 .ant-pagination-item-active {
 	font-weight: 500;
-	background-color: #1875F0;
+	background-color: #1875f0;
 	border-color: #1890ff;
 }
 
@@ -180,7 +180,7 @@ div.content--grid {
 .dropdown--btn {
 	text-align: left;
 
-	span[class="text"] {
+	span[class='text'] {
 		margin-right: 8em;
 	}
 }
