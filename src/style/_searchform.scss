@@ -1,0 +1,64 @@
+label[for="search"] {
+    position: relative;
+
+    input#searchField::placeholder {
+        color: $gray-100;
+        font-family: var(--primary-font);
+        font-size: 1rem;
+    }
+
+    .form-label {
+        position: relative;
+    }
+
+    .label-input {
+        border: none;
+        color: $black-200;
+        border-radius: 4px;
+        height: 2.5rem;
+        left: 35px;
+        padding: 0 2rem 0 45px;
+        top: 30px;
+        width: 25rem;
+        border-bottom: 1px solid;
+        background-color: $white-100;
+    }
+
+    .label-input:active,
+    .label-input:focus {
+        outline: none;
+    }
+
+    .form-button-svg {
+        position: absolute;
+        background: transparent;
+        width: 20px;
+        right: 21em;
+        outline: none;
+        border: none;
+        top: -2px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        cursor: pointer;
+        padding-right: 15px;
+        padding-left: 10px;
+        pointer-events: stroke;
+
+        svg {
+            fill: $gray-100;
+            width: 2rem;
+        }
+    }
+}
+
+label[for="search"].header--searchbar {
+    .label-input {
+        border-bottom: none;
+        background-color: $white;
+    }
+
+    .form-button-svg {
+        top: -22px;
+    }
+}
