@@ -1,3 +1,186 @@
-section[class*="layout"] {
-    background: $gray;
+@mixin analytics-bg {
+	background: #ffffff;
+	border: 1px solid #eef8fd;
+	box-sizing: border-box;
+	border-radius: 2px;
+}
+
+//dashboard layout
+section[class*='layout'] {
+	background: $white-100;
+
+	button[class~='btn'] {
+		position: absolute;
+		width: 163px;
+		height: 33px;
+		left: 32px;
+		font-family: Roboto;
+		font-style: normal;
+		font-weight: bold;
+		top: 0;
+		background: $light-green;
+		border-radius: 30px;
+		border: none;
+		outline: none;
+		color: $white;
+		margin: 25px 0;
+	}
+}
+
+//analytic cards
+section[role='analytics'] {
+	margin-bottom: 3em;
+
+	div.card {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 15px;
+
+		div {
+			background: #ffffff;
+			border: 1px solid #eef8fd;
+			box-sizing: border-box;
+			border-radius: 2px;
+			max-width: 350px;
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			height: 79px;
+
+			div:nth-of-type(1) {
+				display: flex;
+				flex-direction: column;
+			}
+
+			div:nth-of-type(2) {
+				max-width: 168px;
+
+				canvas {
+					height: 80px;
+					width: 80px;
+				}
+			}
+		}
+	}
+}
+
+//graph section
+section[role='graph'] {
+	color: $black-200;
+	margin-bottom: 4em;
+
+	div.card--section2 {
+		div.analytics-container {
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			gap: 5px;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+			div.chart {
+				width: 753px;
+				@include analytics-bg();
+
+				canvas {
+					height: 365px !important;
+				}
+			}
+
+			div.data-section {
+				display: grid;
+				grid-template-columns: 1fr;
+				grid-template-rows: repeat(2, 1fr);
+				gap: 5px;
+
+				div.transaction-card {
+					@include analytics-bg();
+					padding: 16px;
+				}
+
+				.transaction-card {
+					div.progress-line {
+						height: .3rem;
+						background-color: $yellow;
+						border-radius: 3.125rem;
+						margin-top: 1em;
+
+						div {
+							background-color: $light-green;
+							border-top-left-radius: 3.125rem;
+							border-bottom-left-radius: 3.125rem;
+							width: 80%;
+							height: .3rem;
+						}
+					}
+
+					ul {
+						list-style: none;
+						padding: 30px 14px;
+						padding-bottom: 0;
+
+						li {
+							span.pending-yellow {
+								color: $yellow;
+								font-weight: 600;
+							}
+
+							span.fulfilled-green {
+								color: $light-green;
+								font-weight: 600;
+							}
+
+							span.total-primary {
+								color: $blue;
+								font-weight: 600;
+							}
+						}
+					}
+
+					h4 {
+						font-weight: 600;
+						padding: 0 14px;
+					}
+				}
+			}
+		}
+	}
+}
+
+section[role*="table"] {
+	span.footer {
+		position: relative;
+		top: -31px;
+		font-weight: 600;
+	}
+
+	div.payment--group {
+		.heading {
+			h2 {
+				font-size: 28px;
+			}
+		}
+	}
+}
+
+.ant-pagination-item-active {
+	font-weight: 500;
+	background-color: #1875F0;
+	border-color: #1890ff;
+}
+
+.ant-pagination-item-active a {
+	color: #fff;
+}
+
+div.content--grid {
+	display: grid;
+	grid-template-columns: 2fr 3fr 1fr;
+	margin-bottom: 2em;
+	align-items: center;
+}
+
+.dropdown--btn {
+	text-align: left;
+
+	span[class="text"] {
+		margin-right: 8em;
+	}
 }

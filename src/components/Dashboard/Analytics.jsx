@@ -1,11 +1,12 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import LineChart from './LineChart';
 import { TRANSACTION_DATA } from '../constant';
 
-const Analytics = ({ chartData, key, title, value }) => {
+const Analytics = ({ chartData }) => {
 	const [text, setText] = useState('');
 	const [data, setData] = useState();
 	const zero = 0;
+	const line = true;
 	useEffect(() => {
 		if (chartData) {
 			setText(chartData[1].title);
@@ -23,6 +24,7 @@ const Analytics = ({ chartData, key, title, value }) => {
 						title={text}
 						color="#86d0eb75"
 						duration="month"
+						gridlines={line}
 					/>
 				)}
 			</div>
@@ -38,15 +40,15 @@ const Analytics = ({ chartData, key, title, value }) => {
 							<ul>
 								<li>
 									{pending}
-									<span class="pending-yellow">20</span>
+									<span className="pending-yellow">20</span>
 								</li>
 								<li>
 									{fulfilled}
-									<span class="fulfilled-green">80</span>
+									<span className="fulfilled-green">80</span>
 								</li>
 								<li>
 									{total}
-									<span class="total-primary">100</span>
+									<span className="total-primary">100</span>
 								</li>
 							</ul>
 						</div>

@@ -1,0 +1,47 @@
+header[class*="header"] {
+    background: $white;
+    box-shadow: 0px 4px 10px rgba(79, 79, 79, 0.07);
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    z-index: 2;
+
+    svg {
+        margin-top: 20px;
+        flex: 0 0 165px;
+    }
+
+    div.search {
+        flex: 1 0 530px;
+    }
+
+    ul {
+        flex: 1 0 0px;
+    }
+
+    div.user {
+        display: flex;
+        text-align: right;
+
+        div.user--profile {
+            img {
+                width: 40px;
+                margin-left: 15px;
+            }
+        }
+
+        div.user--name {
+            h4 {
+                display: block;
+                margin-top: -47px;
+
+            }
+
+            span {
+                display: block;
+                margin-bottom: 0px;
+                margin-top: -16px
+            }
+        }
+    }
+}

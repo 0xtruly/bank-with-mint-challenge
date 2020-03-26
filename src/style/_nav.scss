@@ -1,0 +1,48 @@
+aside[class*="side"] {
+    background: $white;
+    flex: 0 0 275px !important;
+    max-width: 290px !important;
+    min-width: 200px !important;
+    width: 240px !important;
+
+    ul[class*="list"] {
+        margin: 100px 0;
+        color: $gray-200;
+        font-family: var(--primary-font);
+
+        span.menu-title {
+            margin-left: 46px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        li a[href^="#/"] {
+            display: grid;
+            grid-template-columns: 1fr 6fr;
+            gap: 10px;
+            margin-left: 20px;
+            color: $gray-200;
+
+            svg {
+                margin-top: 6px;
+                width: 24px;
+                height: 24px;
+
+            }
+        }
+
+
+        li:nth-of-type(1),
+        li:nth-of-type(5) {
+            margin-bottom: 40px;
+        }
+
+        li:nth-of-type(8) {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.ant-menu-inline .ant-menu-item::after {
+    right: 98%;
+}

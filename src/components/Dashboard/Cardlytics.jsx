@@ -21,6 +21,7 @@ const Cardlytics = ({ chartData, key, title, value }) => {
 			<div>
 				{data && (
 					<LineChart
+						borderWidth="1"
 						data={data}
 						title={text}
 						color="#86d0eb75"

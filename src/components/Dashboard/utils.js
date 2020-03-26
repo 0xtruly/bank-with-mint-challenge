@@ -17,11 +17,11 @@ export const getData = () => {
     let data = [];
     data.push({
         title: 'Daily Transaction Volume',
-        data: getRandomDateArray(3.9)
+        data: getRandomDateArray(4)
     });
     data.push({
         title: 'Daily Transaction Value',
-        data: getRandomDateArray(5)
+        data: getRandomDateArray(50)
     });
     data.push({
         title: 'Total Transaction Volume',

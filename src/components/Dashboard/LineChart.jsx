@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import Chart from 'chart.js';
 
-const LineChart = ({ color, data, duration, title }) => {
+const LineChart = ({ borderWidth, color, data, duration, title }) => {
 	const canvasRef = useRef();
 
 	useEffect(() => {
@@ -27,20 +27,30 @@ const LineChart = ({ color, data, duration, title }) => {
 							display: false
 						}
 					]
+				},
+				legend: {
+					display: false
+				},
+				tooltips: {
+					callbacks: {
+						label: function(tooltipItem) {
+							console.log(tooltipItem);
+							return tooltipItem.yLabel;
+						}
+					}
 				}
 			},
 			data: {
 				labels: data.map(datum => datum.time),
 				datasets: [
 					{
-						// title: title,
 						data: data.map(datum => datum.value),
 						fill: 'start',
 						backgroundColor: color,
 						pointRadius: 0,
 						borderColor: '#0294FF',
 						lineTension: 0,
-						borderWidth: 1
+						borderWidth: borderWidth
 					}
 				]
 			}
@@ -48,7 +58,7 @@ const LineChart = ({ color, data, duration, title }) => {
 		myChart.data.labels = data.map(d => d.time);
 		myChart.data.datasets[0].data = data.map(d => d.value);
 		myChart.update();
-	}, [data, duration, color, title]);
+	}, [data, duration, color, title, borderWidth]);
 
 	return <canvas ref={canvasRef} />;
 };
